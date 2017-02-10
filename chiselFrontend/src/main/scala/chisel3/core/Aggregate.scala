@@ -543,6 +543,9 @@ class Bundle extends Record {
   override def toPrintable: Printable = toPrintableHelper(elements.toList.reverse)
 }
 
+/** Shadow class for distinguishing between chisel3 and Chisel Bundles */
+class CompatibilityBundle extends Bundle
+
 private[core] object Bundle {
   val keywords = List("flip", "asInput", "asOutput", "cloneType", "chiselCloneType", "toBits",
     "widthOption", "signalName", "signalPathName", "signalParent", "signalComponent")
